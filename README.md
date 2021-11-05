@@ -19,7 +19,7 @@ c) Point your browser to the end point http://localhost:8000/ to fetch arrival d
 
 d) Point your browser to the end point http://localhost:8000/results to see historical data
 
-e) Point your browser to the end point http://localhost:8000/api to see tfl api
+e) Point your browser to the end point http://localhost:8000/api to see tfl-api
 
         
  Some representative screenshots
