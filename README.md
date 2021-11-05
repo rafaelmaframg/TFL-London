@@ -16,11 +16,10 @@ b) Run the django server as follows:
     $  python manage.py runserver
 
 c) Point your browser to the end point http://localhost:8000/ to fetch arrival data about "490009333W".
-   Reload the page a couple of time to generate historical data. The JSON content returned from the API should be shown
 
 d) Point your browser to the end point http://localhost:8000/results to see historical data
 
-e) Point your browser to the end point http://localhost:8000/tfl to see tfl api
+e) Point your browser to the end point http://localhost:8000/api to see tfl api
 
         
  Some representative screenshots

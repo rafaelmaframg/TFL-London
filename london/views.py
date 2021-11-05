@@ -5,8 +5,9 @@ from .models import Buses
 from .services import get_bus
 
 
- # 'https://api.tfl.gov.uk/StopPoint/490014050A/arrivals' #Victoria, this is used to second check.
+# 'https://api.tfl.gov.uk/StopPoint/490014050A/arrivals' #Victoria, this is used to second check.
 url = 'https://api.tfl.gov.uk/StopPoint/490009333W/arrivals' #Lower Marsh Lane
+
 
 def index(request):
     """Function to render the index page, this function call the services to get and render the index page"""
