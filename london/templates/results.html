@@ -2,32 +2,31 @@
 {% load mathfilters %}
 <html lang="en">
 <head>
-    <!------------------------ Menu Area -------------------------------->
     <meta charset="UTF-8">
     <title>TFL - BUSES STOP</title>
     <link href="{% static 'bootstrap.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
 </head>
 <header>
+    <!------------------------ Menu Area -------------------------------->
 <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index"><img src="{% static 'logo.png'%}" height="60px" width="200px" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link " href="index">Home
-
-          </a>
+          <a class="nav-link " href="index">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="api">Call API</a>
         </li>
           <li class="nav-item">
           <a class="nav-link active" href="results">Results
-              <span class="visually-hidden">(current)</span></a>
+              <span class="visually-hidden">(current)</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -35,7 +34,6 @@
 </nav>
     <!------------------------ End Menu Area -------------------------------->
 </header>
-
 <body>
 <table class="table table-hover text-center">
 <thead>
@@ -60,8 +58,5 @@
 {% endfor %}
     </table>
   <!------------------------ end iteration each saved data -------------------------------->
-
-
-</div>
 </body>
 </html>

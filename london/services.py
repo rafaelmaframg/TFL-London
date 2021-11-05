@@ -1,4 +1,5 @@
 import requests
+from requests.exceptions import HTTPError
 
 
 def get_bus(url):
@@ -7,6 +8,9 @@ def get_bus(url):
         r = requests.get(url)
         # If the response was successful, no Exception will be raised
         r.raise_for_status()
-        
-        buses = r.json()
-    return buses
+    except HTTPError as err:#<class 'requests.exceptions.HTTPError'>
+        return err
+    except Exception as excp:#<class 'UnboundLocalError'>
+        return excp
+    else:
+        return r.json()
