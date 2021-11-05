@@ -1,0 +1,44 @@
+{% load static %}
+{% load mathfilters %}
+<html lang="en">
+<meta http-equiv="refresh" content="{{refresh}}"> <!--- countdownServerAdjustment --->
+<head>
+    <meta charset="UTF-8">
+    <title>TFL - BUS STOP</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}"/>
+    <link href="{% static 'bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<header>
+<!------------------------ End Menu Area -------------------------------->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=""><img src="{% static 'logo.png'%}" height="60px" width="200px" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="index">Home
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link active" href="api">Call API
+            <span class="visually-hidden">(current)</span></a>
+        </li>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="results">Results</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!------------------------ End Menu Area -------------------------------->
+</header>
+
+<body>
+{{api}}
+</body>
+</html>

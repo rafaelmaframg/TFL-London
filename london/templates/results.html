@@ -1,0 +1,67 @@
+{% load static %}
+{% load mathfilters %}
+<html lang="en">
+<head>
+    <!------------------------ Menu Area -------------------------------->
+    <meta charset="UTF-8">
+    <title>TFL - BUSES STOP</title>
+    <link href="{% static 'bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<header>
+<nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index"><img src="{% static 'logo.png'%}" height="60px" width="200px" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="index">Home
+
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="api">Call API</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" href="results">Results
+              <span class="visually-hidden">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!------------------------ End Menu Area -------------------------------->
+</header>
+
+<body>
+<table class="table table-hover text-center">
+<thead>
+    <tr>
+      <th scope="col">Line</th>
+      <th scope="col">Destin</th>
+      <th scope="col">VehicleID</th>
+      <th scope="col">Call Time</th>
+        <th scope="col">Expcted Arrival</th>
+    </tr>
+  </thead>
+  <!------------------------ iteration each saved data -------------------------------->
+{% for each in bus %}
+    <tbody>
+    <tr class="table-light text-center">
+<th scope="row">{{ each.line_name }}</th>
+        <td>{{ each.destination_name }}</td>
+        <td>{{ each.vehicle_id }}</td>
+        <td> {{ each.time_now }} </td>
+        <td>{{ each.expected_arrival }}</td>
+    </tr></tbody>
+{% endfor %}
+    </table>
+  <!------------------------ end iteration each saved data -------------------------------->
+
+
+</div>
+</body>
+</html>
