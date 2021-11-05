@@ -14,6 +14,25 @@ url = 'https://api.tfl.gov.uk/StopPoint/490009333W/arrivals' #Lower Marsh Lane
 def index(request):
     """Function to render the index page, this function call the services to get and render the index page"""
     buses = get_bus(url)
+    search = request.GET.get('search')
+
+    if search: #execute the search if the button has clicked
+        buses = Buses.objects.all()
+        search = request.GET.get('search')
+        if search:
+            buses = buses.filter(vehicle_id__icontains=search)
+
+            paginator = Paginator(buses, 10)  # paginator for data in results page
+            try:
+                page = int(request.GET.get('page', '1'))
+            except ValueError:
+                page = 1
+            try:
+                bus = paginator.page(page)
+            except (EmptyPage, InvalidPage):
+                bus = paginator.page(paginator.num_pages)
+            return render(request, 'results.html', {'buses': bus})
+
     if not isinstance(buses, list): #Check Error
         return HttpResponseNotFound(buses)
     create_bus(buses) #Create object
@@ -36,6 +55,10 @@ def api(request):
 def results(request):
     """Function to get all saved data in DB and render the results page"""
     buses = Buses.objects.all()
+    search = request.GET.get('search')
+    if search:
+        buses = buses.filter(vehicle_id__icontains=search)
+
     paginator = Paginator(buses, 10) #paginator for data in results page
     try:
         page = int(request.GET.get('page', '1'))
