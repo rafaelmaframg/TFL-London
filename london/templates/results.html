@@ -46,7 +46,7 @@
     </tr>
   </thead>
   <!------------------------ iteration each saved data -------------------------------->
-{% for each in bus %}
+{% for each in buses.object_list %}
     <tbody>
     <tr class="table-light text-center">
 <th scope="row">{{ each.line_name }}</th>
@@ -58,5 +58,20 @@
 {% endfor %}
     </table>
   <!------------------------ end iteration each saved data -------------------------------->
+<div class="pagination">
+    <span class="step-links">
+        {% if buses.has_previous %}
+            <a href="?page={{ buses.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ buses.number }} of {{ buses.paginator.num_pages }}.
+        </span>
+
+        {% if buses.has_next %}
+            <a href="?page={{ buses.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>
 </body>
 </html>

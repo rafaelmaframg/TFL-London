@@ -27,6 +27,7 @@ e) Point your browser to the end point http://localhost:8000/api to see tfl api
 
 ![Alt text](index.jpg)
 ![Alt text](results.jpg)
+![Alt text](api.jpg)
 
 The database model
 ====================
